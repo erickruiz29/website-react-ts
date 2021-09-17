@@ -1,0 +1,22 @@
+.navigationMenu {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    li {
+      margin: 4px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      line-height: 150%;
+      font-size: 16px;
+      background-color: var(--color-primary);
+
+      a {
+        color: var(--surfaces-fg);
+        text-decoration: none;
+      }
+    }
+  }
+}
