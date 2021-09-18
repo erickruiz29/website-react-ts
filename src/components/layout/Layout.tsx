@@ -1,17 +1,19 @@
-import {PropsWithChildren} from "react";
+import {Fragment, PropsWithChildren} from "react";
 import {NavigationMenu} from "./NavigationMenu";
 
-export interface LayoutProps {
+import "./Layout.scss";
 
-}
+export interface LayoutProps {}
 
 export function Layout(props: PropsWithChildren<LayoutProps>) {
     return (
-        <div>
-            <NavigationMenu />
+        <Fragment>
+            <header>
+                <NavigationMenu />
+            </header>
             <main>
                 {props.children}
             </main>
-        </div>
+        </Fragment>
     )
 }

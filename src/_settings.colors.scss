@@ -1,5 +1,6 @@
 html {
   --color-primary: #ef5b90;
+  --color-primary-50: #{transparentize(#ef5b90, .50)};
   --surfaces-bg-1: #ffffff;
   --surfaces-fg: #000000;
 }

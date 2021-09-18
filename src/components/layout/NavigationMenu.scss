@@ -4,14 +4,22 @@
     display: flex;
     flex-direction: row;
     list-style: none;
+    margin: 0;
+    padding: 8px 16px;
 
     li {
+      align-items: center;
+      justify-content: center;
       margin: 4px;
       padding: 4px 8px;
       border-radius: 4px;
       line-height: 150%;
       font-size: 16px;
       background-color: var(--color-primary);
+
+      &:first-of-type {
+        margin-left: auto;
+      }
 
       a {
         color: var(--surfaces-fg);
