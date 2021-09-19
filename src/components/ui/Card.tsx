@@ -1,11 +1,13 @@
 import {PropsWithChildren} from "react";
 
+import "./Card.scss"
+
 export interface CardProps {
-    className: string
+    className?: string
 }
 
 export function Card(props: PropsWithChildren<CardProps>) {
-    const className = `card ${props.className}}`
+    const className = `card ${props.className ?? ""}`
     return (
         <div className={className}>{props.children}</div>
     )

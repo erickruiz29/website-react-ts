@@ -1,4 +1,10 @@
 header {
   width: 100%;
-  background: var(--color-primary-50);
+  background: var(--color-primary--50);
+}
+
+main {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
 }

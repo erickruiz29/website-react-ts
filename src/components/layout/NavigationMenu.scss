@@ -8,22 +8,27 @@
     padding: 8px 16px;
 
     li {
-      align-items: center;
-      justify-content: center;
       margin: 4px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      line-height: 150%;
-      font-size: 16px;
-      background-color: var(--color-primary);
 
       &:first-of-type {
         margin-left: auto;
       }
 
       a {
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 4px;
+        line-height: 150%;
+        font-size: 16px;
+        background-color: var(--color-primary);
         color: var(--surfaces-fg);
         text-decoration: none;
+        border: 2px solid transparent;
+
+        &.active, &:hover {
+          border: 2px solid var(--surfaces-fg);
+        }
       }
     }
   }

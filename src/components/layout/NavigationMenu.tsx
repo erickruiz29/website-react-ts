@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 import "./NavigationMenu.scss"
 
@@ -8,10 +8,10 @@ export function NavigationMenu() {
         <div className={"navigationMenu"}>
             <ul>
                 <li>
-                    <Link to={"/"}>Home</Link>
+                    <NavLink to={"/"} exact>Home</NavLink>
                 </li>
                 <li>
-                    <Link to={"/second-page"}>Second Page</Link>
+                    <NavLink to={"/second-page"}>Second Page</NavLink>
                 </li>
             </ul>
         </div>
