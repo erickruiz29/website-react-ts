@@ -22,12 +22,12 @@
         line-height: 150%;
         font-size: 16px;
         background-color: var(--color-primary);
-        color: var(--surfaces-fg);
+        color: var(--surfaces-white);
         text-decoration: none;
         border: 2px solid transparent;
 
         &.active, &:hover {
-          border: 2px solid var(--surfaces-fg);
+          border: 2px solid var(--color-primary--border);
         }
       }
     }

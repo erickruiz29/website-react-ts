@@ -11,7 +11,7 @@ export function NavigationMenu() {
                     <NavLink to={"/"} exact>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/second-page"}>Second Page</NavLink>
+                    <NavLink to={"/page-2"}>Page 2</NavLink>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,31 @@
+.profileCard {
+  width: 220px;
+  height: min-content;
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  .image img {
+    width: 220px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surfaces-bg-1--hover);
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-top: 4px;
+
+    .title,
+    .subtitle {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}

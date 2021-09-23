@@ -9,11 +9,7 @@
   align-items: center;
   margin: 4px;
 
-  & * {
-    cursor: initial;
-  }
-
-  &:hover {
+  &.clickable:hover {
     background-color: var(--surfaces-bg-1--hover);
   }
 }

@@ -1,0 +1,25 @@
+.content {
+  width: 80%;
+  min-width: 300px;
+  margin: 32px auto;
+  background-color: var(--surfaces-bg-2);
+  border: 2px solid var(--surfaces-bg-2--border);
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.vertical-center {
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    justify-content: center;
+  }
+}

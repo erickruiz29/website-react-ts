@@ -1,0 +1,8 @@
+.textCard {
+  &.card {
+    white-space: pre-line;
+    &:hover {
+      background-color: var(--surfaces-bg-1);
+    }
+  }
+}

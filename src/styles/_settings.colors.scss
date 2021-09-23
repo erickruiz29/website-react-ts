@@ -1,0 +1,14 @@
+html {
+  --color-primary: #1680a0;
+  --color-primary--80: #{transparentize(#1680a0, .20)};
+  --color-primary--border: #{darken(#1680a0, 12%)};
+  --surfaces-bg-1: #ffffff;
+  --surfaces-bg-1--hover: #{darken(#ffffff, 12%)} ;
+  --surfaces-bg-1--border: #{darken(#ffffff, 24%)} ;
+  --surfaces-bg-2: #{darken(#ffffff, 8%)};
+  --surfaces-bg-2--hover: #{darken(#ffffff, 20%)} ;
+  --surfaces-bg-2--border: #{darken(#ffffff, 32%)} ;
+  --surfaces-fg: #000000;
+  --surfaces-white: #ffffff;
+  --surfaces-black: #000000;
+}

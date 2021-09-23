@@ -11,7 +11,7 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/second-page">
+        <Route path="/page-2">
           <SecondPage />
         </Route>
       </Switch>
