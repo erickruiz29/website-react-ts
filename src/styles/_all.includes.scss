@@ -1,1 +1,7 @@
-@import "settings.colors";
+@import "./settings.colors";
+@import "./settings.typography";
+@import "./normalize";
+@import "./utilities";
+
+@import "./pages/pages.imports";
+@import "./components/components.imports";

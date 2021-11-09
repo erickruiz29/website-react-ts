@@ -1,7 +1,4 @@
 import {PropsWithChildren} from "react";
-
-import "./Content.scss"
-
 export interface ContentProps {
     className?: string
 }

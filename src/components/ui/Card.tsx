@@ -1,7 +1,4 @@
 import {PropsWithChildren} from "react";
-
-import "./Card.scss"
-
 export interface CardProps {
     className?: string
     onClick?: () => void

@@ -5,7 +5,7 @@ import {ProfileCard} from "../components/ProfileCard";
 import {Content} from "../components/layout/Content";
 import {TextCard} from "../components/TextCard";
 
-export function HomePage() {
+export function About() {
     const erickProfileCardProps = {
         imageSrc: "/image/erick-ruiz-01.jpg",
         title: "Erick Ruiz",

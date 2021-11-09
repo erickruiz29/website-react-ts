@@ -1,7 +1,4 @@
 import {Card, CardProps} from "./ui/Card";
-
-import "./ProfileCard.scss"
-
 export interface ProfileCardProps extends CardProps {
     title: string
     subtitles: string[]

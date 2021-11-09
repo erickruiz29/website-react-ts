@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
 import {Route, Switch} from 'react-router-dom';
+import {About} from "./pages/About";
 import {HomePage} from "./pages/HomePage";
-import {SecondPage} from "./pages/SecondPage";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/page-2">
-          <SecondPage />
+        <Route path="/about-me">
+          <About />
         </Route>
       </Switch>
     </div>

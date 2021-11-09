@@ -1,11 +1,30 @@
 .navigationMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .erick-ruiz-link {
+    @include Heading();
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: rem(48px);
+
+    & a:hover,
+    & a:active,
+    & a.active {
+      color: var(--text-high-emphasis);
+      text-decoration: none;
+    }
+  }
 
   ul {
     display: flex;
     flex-direction: row;
     list-style: none;
-    margin: 0;
-    padding: 8px 16px;
+    margin: rem(0);
+    margin-left: auto;
+    padding: rem(8px) rem(16px);
 
     li {
       margin: 4px;
