@@ -1,0 +1,68 @@
+@import "./../styles/utilities";
+
+.parallaxContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: rem(32);
+  }
+  
+  .parallax {
+    height: rem(900);
+    width: 100%;
+    background-attachment: fixed;
+  }
+  
+  .content01 {
+    background: url('./../assets/images/01.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content02 {
+    background: url('./../assets/images/02.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content03 {
+    background: url('./../assets/images/03.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content04 {
+    background: url('./../assets/images/04.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content05 {
+    background: url('./../assets/images/05.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content06 {
+    background: url('./../assets/images/06.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content07 {
+    background: url('./../assets/images/07.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content08 {
+    background: url('./../assets/images/08.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
+  
+  .content09 {
+    background: url('./../assets/images/09.jpg') rgba(0, 0, 0, 0.65) no-repeat center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+  }
