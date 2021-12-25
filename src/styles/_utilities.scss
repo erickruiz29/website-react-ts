@@ -16,3 +16,16 @@ $html-font-size: 16px;
         -ms-user-select: none;
             user-select: none;
 }
+
+$screen-xs-min: 360px;
+$screen-sm-min: 480px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1440px;
+$screen-xxl-min: 1920px;
+
+@mixin md($size) {
+    @media (min-width: #{$size}) {
+        @content;
+    }
+}

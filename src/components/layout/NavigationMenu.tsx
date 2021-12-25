@@ -6,32 +6,20 @@ const links = [
     id: 'content01',
   },
   {
-    title: 'About',
-    id: 'content02',
-  },
-  {
-    title: 'Volume.com',
+    title: 'Work',
     id: 'content03',
   },
   {
-    title: 'UCLA',
-    id: 'content04',
-  },
-  {
-    title: 'California',
+    title: 'Fun',
     id: 'content05',
   },
   {
     title: 'Faith',
-    id: 'content06',
-  },
-  {
-    title: 'Contact',
     id: 'content07',
   },
   {
-    title: 'Hire me',
-    id: 'content08',
+    title: 'Contact',
+    id: 'content09',
   },
 ];
 
