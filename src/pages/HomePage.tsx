@@ -2,7 +2,7 @@ import React from 'react';
 import { Content } from '../components/layout/Content';
 import { Layout } from '../components/layout/Layout';
 
-import styles from './HomePage.module.scss'
+import styles from './HomePage.module.scss';
 
 export function HomePage() {
   return (
