@@ -1,10 +1,11 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
+
+import styles from './NavigationMenu.module.scss';
 
 export function NavigationMenu() {
   return (
-    <div className={'navigation-menu'}>
-      <div className="nav-links">
+    <div className={styles.navigationMenu}>
+      <div className={styles.navLinks}>
         <NavLink to={'/'} title="ErickRuiz.net" exact>
           ErickRuiz.net
         </NavLink>

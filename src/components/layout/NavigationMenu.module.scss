@@ -1,9 +1,11 @@
-.navigation-menu {
+@use "./../../styles/_all.includes.scss";
+
+.navigationMenu {
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  .nav-links {
+  .navLinks {
     align-items: center;
     display: flex;
     flex-direction: row;

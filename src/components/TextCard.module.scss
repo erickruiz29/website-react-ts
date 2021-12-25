@@ -1,4 +1,6 @@
-.text-card {
+@use "../styles/_all.includes";
+
+.textCard {
   @include textBody1();
 
   color: var(--text-high-emphasis);
