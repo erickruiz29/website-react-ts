@@ -1,12 +1,8 @@
-import {PropsWithChildren} from "react";
-export interface ContentProps {
-    className?: string
-}
+import { IPropsWithChildren } from '../../utils/util';
+export interface ContentProps extends IPropsWithChildren {}
 
-export function Content(props: PropsWithChildren<ContentProps>) {
-    return (
-        <div className={`content ${props.className ?? ""}`}>
-            {props.children}
-        </div>
-    )
+export function Content(props: ContentProps) {
+  return (
+    <div className={['content', props.classes].join(' ')}>{props.children}</div>
+  );
 }

@@ -1,9 +1,11 @@
+import { optionalAttr } from "../utils/util";
 import {Card, CardProps} from "./ui/Card";
-import {PropsWithChildren} from "react";
 
-export function TextCard(props: PropsWithChildren<CardProps>) {
+interface TextCardProps extends CardProps  {}
+
+export function TextCard(props: TextCardProps) {
     return (
-        <Card {...{...props, className: props.className ?? "" + " textCard"}}>
+        <Card {...{...props, classes: [...optionalAttr(props.classes), "text-card"]}}>
             {props.children}
         </Card>
     )

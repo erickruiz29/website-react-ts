@@ -3,20 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 export function NavigationMenu() {
   return (
-    <div className={'navigationMenu'}>
-      <div className="erick-ruiz-link">
-        <NavLink to={'/'}>Erick Ruiz</NavLink>
+    <div className={'navigation-menu'}>
+      <div className="nav-links">
+        <NavLink to={'/'} title="ErickRuiz.net" exact>
+          ErickRuiz.net
+        </NavLink>
+        <NavLink to={'/about-me'} title="About Me">
+          About Me
+        </NavLink>
       </div>
-      <ul>
-        <li>
-          <NavLink to={'/'} exact>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to={'/about-me'}>About Me</NavLink>
-        </li>
-      </ul>
     </div>
   );
 }

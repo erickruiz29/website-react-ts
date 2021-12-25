@@ -1,9 +1,10 @@
 .content {
+  color: var(--text-high-emphasis);
   width: 80%;
   min-width: 300px;
   margin: 32px auto;
-  background-color: var(--surfaces-bg-2);
-  border: 2px solid var(--surfaces-bg-2--border);
+  background-color: var(--surface-bg-1);
+  border: 2px solid var(--surface-bg-2);
   padding: 16px;
   border-radius: 4px;
   display: flex;

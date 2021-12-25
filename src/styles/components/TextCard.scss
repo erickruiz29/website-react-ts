@@ -1,8 +1,8 @@
-.textCard {
+.text-card {
+  @include textBody1();
+
+  color: var(--text-high-emphasis);
   &.card {
     white-space: pre-line;
-    &:hover {
-      background-color: var(--surfaces-bg-1);
-    }
   }
 }

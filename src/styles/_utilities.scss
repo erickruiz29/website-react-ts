@@ -7,3 +7,12 @@ $html-font-size: 16px;
 @function rem($pxValue) {
     @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
+
+%no-highlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}

@@ -1,20 +1,21 @@
 import React from "react";
 import {Layout} from "../components/layout/Layout";
 import {ProfileCard} from "../components/ProfileCard";
-
 import {Content} from "../components/layout/Content";
 import {TextCard} from "../components/TextCard";
 
+import erickRuiz01 from "./../assets/images/erick-ruiz-01.jpg"
+
 export function About() {
     const erickProfileCardProps = {
-        imageSrc: "/image/erick-ruiz-01.jpg",
+        imageSrc: erickRuiz01,
         title: "Erick Ruiz",
         subtitles: ["Software Engineer", "Fullerton, CA"],
         onClick: undefined,
     }
     return (
         <Layout>
-            <Content className={"center"}>
+            <Content classes={["center"]}>
                 <ProfileCard {...erickProfileCardProps} />
                 <TextCard>
                     {`Hi, my name is Erick Ruiz. I am a programmer from Southern California, particularly

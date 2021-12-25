@@ -1,53 +1,46 @@
-.navigationMenu {
+.navigation-menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  .erick-ruiz-link {
-    @include Heading();
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: rem(48px);
-
-    & a:hover,
-    & a:active,
-    & a.active {
-      color: var(--text-high-emphasis);
-      text-decoration: none;
-    }
-  }
-
-  ul {
+  .nav-links {
+    align-items: center;
     display: flex;
     flex-direction: row;
+    height: 32px;
+    justify-content: center;
     list-style: none;
-    margin: rem(0);
-    margin-left: auto;
-    padding: rem(8px) rem(16px);
+    margin: 0 auto;
+    padding: 0;
 
-    li {
-      margin: 4px;
+    a {
+      @include textBody1();
 
-      &:first-of-type {
-        margin-left: auto;
+      @extend %no-highlight;
+
+      font-size: rem(12);
+      font-weight: 500;
+      padding: rem(0) rem(8);
+      border-radius: rem(4);
+      background-color: transparent;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &::before {
+        @include textBody1();
+
+        display: block;
+        content: attr(title);
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        position: absolute;
       }
 
-      a {
-        align-items: center;
-        justify-content: center;
-        padding: 4px 8px;
-        border-radius: 4px;
-        line-height: 150%;
-        font-size: 16px;
-        background-color: var(--color-primary);
-        color: var(--surfaces-white);
-        text-decoration: none;
-        border: 2px solid transparent;
-
-        &.active, &:hover {
-          border: 2px solid var(--color-primary--border);
-        }
+      &.active,
+      &:hover {
+        font-weight: 700;
       }
     }
   }

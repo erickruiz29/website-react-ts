@@ -1,15 +1,47 @@
+$color-brand-primary: #2E9CCA;
+$color-brand-secondary: #29648A;
+
+$surface-bg-1-dark: #25274D;
+$surface-bg-2-dark: #464866;
+$surface-bg-3-dark: #AAABB8;
+
+$surface-bg-1-light: #555447;
+$surface-bg-2-light: #B9B799;
+$surface-bg-3-light: #DAD8B2;
+
+$surface-black: #000000;
+$surface-white: #FFFFFF;
+
+$text-high-emphasis-black: scale_color($surface-black, $alpha: -5%);
+$text-med-emphasis-black: scale_color($surface-black, $alpha: -15%);
+$text-disabled-black: scale_color($surface-black, $alpha: -45%);
+
+$text-high-emphasis-white: scale_color($surface-white, $alpha: -5%);
+$text-med-emphasis-white: scale_color($surface-white, $alpha: -15%);
+$text-disabled-white: scale_color($surface-white, $alpha: -45%);
+
 html {
-  --color-primary: #1680a0;
-  --color-primary--80: #{transparentize(#1680a0, .20)};
-  --color-primary--border: #{darken(#1680a0, 12%)};
-  --surfaces-bg-1: #ffffff;
-  --surfaces-bg-1--hover: #{darken(#ffffff, 12%)} ;
-  --surfaces-bg-1--border: #{darken(#ffffff, 24%)} ;
-  --surfaces-bg-2: #{darken(#ffffff, 8%)};
-  --surfaces-bg-2--hover: #{darken(#ffffff, 20%)} ;
-  --surfaces-bg-2--border: #{darken(#ffffff, 32%)} ;
-  --surfaces-fg: #000000;
-  --surfaces-white: #ffffff;
-  --surfaces-black: #000000;
-  --text-high-emphasis: #{rgba(0,0,0, .90)}
+  --color-brand-primary: #{$color-brand-primary};
+  --color-brand-secondary: #{$color-brand-secondary};
+  --surface-bg-1: #{$surface-bg-1-light};
+  --surface-bg-2: #{$surface-bg-2-light};
+  --surface-bg-3: #{$surface-bg-3-light};
+  --text-high-emphasis: #{$text-high-emphasis-black};
+  --text-med-emphasis: #{$text-med-emphasis-black};
+  --text-disabled: #{$text-disabled-black};
+}
+
+@mixin darkTheme {
+  --color-brand-primary: #{$color-brand-primary};
+  --color-brand-secondary: #{$color-brand-secondary};
+  --surface-bg-1: #{$surface-bg-1-dark};
+  --surface-bg-2: #{$surface-bg-2-dark};
+  --surface-bg-3: #{$surface-bg-3-dark};
+  --text-high-emphasis: #{$text-high-emphasis-white};
+  --text-med-emphasis: #{$text-med-emphasis-white};
+  --text-disabled: #{$text-disabled-white};
+}
+
+[data-color-scheme="dark"] {
+  @include darkTheme();
 }

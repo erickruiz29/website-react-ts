@@ -1,4 +1,4 @@
-.profileCard {
+.profile-card {
   width: 220px;
   height: min-content;
 
@@ -7,13 +7,14 @@
   }
 
   .image img {
-    width: 220px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
 
   .section {
     display: flex;
     flex-direction: column;
-    background-color: var(--surfaces-bg-1--hover);
     width: calc(100% - 16px);
     padding: 8px;
     margin-top: 4px;
@@ -24,8 +25,11 @@
     }
 
     .title {
-      font-size: 24px;
-      font-weight: 500;
+      @include Heading1();
+    }
+
+    .subtitle {
+      @include Heading3();
     }
   }
 }

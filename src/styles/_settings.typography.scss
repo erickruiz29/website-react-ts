@@ -1,12 +1,49 @@
+$font-family: 'Overpass';
+$font-family-italic: 'Overpass-Italic';
+
 @font-face {
-  font-family: 'Varta';
-  src: url('../fonts/Varta.woff2') format('woff2');
+  font-family: $font-family;
+  src: url('../fonts/#{$font-family}.ttf') format('truetype');
 }
 
-@mixin Heading {
-  font-family: 'Varta';
+@font-face {
+  font-family: $font-family;
+  src: url('../fonts/#{$font-family-italic}.ttf') format('truetype');
+  font-style: italic;
+}
+
+@mixin Heading1 {
+  font-family: $font-family;
   font-size: 24px;
-  line-height: 120%;
+  line-height: initial;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-high-emphasis);
+}
+
+@mixin Heading2 {
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: initial;
   font-weight: 500;
   letter-spacing: 0.01em;
+  color: var(--text-high-emphasis);
+}
+
+@mixin Heading3 {
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: initial;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-high-emphasis);
+}
+
+@mixin textBody1 {
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: initial;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-high-emphasis);
 }

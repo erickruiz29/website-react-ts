@@ -6,8 +6,12 @@ export interface ProfileCardProps extends CardProps {
 }
 
 export function ProfileCard(props: ProfileCardProps) {
+    const classes = ["profile-card"]
+    if (props.onClick !== undefined) {
+        classes.push("clickable")
+    }
     return (
-        <Card className={`profileCard ${props.onClick ? 'clickable' : ""}`} onClick={props.onClick}>
+        <Card classes={classes} onClick={props.onClick}>
             {props.imageSrc && (
                 <div className={"image"}>
                     <img src={props.imageSrc} alt={props.title}/>
