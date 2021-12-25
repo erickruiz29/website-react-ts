@@ -1,0 +1,17 @@
+$font-family: 'Overpass';
+$font-family-italic: 'Overpass-Italic';
+$font-faces-declared: 'false' !default;
+
+@if $font-faces-declared == 'false' {
+  @font-face {
+    font-family: $font-family;
+    src: url('./../fonts/#{$font-family}.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: $font-family;
+    src: url('./../fonts/#{$font-family-italic}.ttf') format('truetype');
+    font-style: italic;
+  }
+  $font-faces-declared: 'true';
+}

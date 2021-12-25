@@ -1,4 +1,3 @@
-@use "sass:color";
 $color-brand-primary: #2E9CCA;
 $color-brand-secondary: #29648A;
 
@@ -13,13 +12,13 @@ $surface-bg-3-light: #DAD8B2;
 $surface-black: #000000;
 $surface-white: #FFFFFF;
 
-$text-high-emphasis-black: color.scale($surface-black, $alpha: -5%);
-$text-med-emphasis-black: color.scale($surface-black, $alpha: -15%);
-$text-disabled-black: color.scale($surface-black, $alpha: -45%);
+$text-high-emphasis-black: scale-color($surface-black, $alpha: -5%);
+$text-med-emphasis-black: scale-color($surface-black, $alpha: -15%);
+$text-disabled-black: scale-color($surface-black, $alpha: -45%);
 
-$text-high-emphasis-white: color.scale($surface-white, $alpha: -5%);
-$text-med-emphasis-white: color.scale($surface-white, $alpha: -15%);
-$text-disabled-white: color.scale($surface-white, $alpha: -45%);
+$text-high-emphasis-white: scale-color($surface-white, $alpha: -5%);
+$text-med-emphasis-white: scale-color($surface-white, $alpha: -15%);
+$text-disabled-white: scale-color($surface-white, $alpha: -45%);
 
 html {
   --color-brand-primary: #{$color-brand-primary};

@@ -1,16 +1,4 @@
 $font-family: 'Overpass';
-$font-family-italic: 'Overpass-Italic';
-
-@font-face {
-  font-family: $font-family;
-  src: url('../fonts/#{$font-family}.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: $font-family;
-  src: url('../fonts/#{$font-family-italic}.ttf') format('truetype');
-  font-style: italic;
-}
 
 @mixin Heading1 {
   font-family: $font-family;
