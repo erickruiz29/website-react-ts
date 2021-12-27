@@ -17,6 +17,10 @@
   &.vertical-center {
     align-items: center;
   }
+
+  &.newlines {
+    white-space: pre-line;
+  }
 }
 
 @include md($screen-md-min) {

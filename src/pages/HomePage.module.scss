@@ -6,6 +6,7 @@
   }
   
   .parallax {
+    display: flex;
     height: rem(900);
     width: 100%;
     background-attachment: fixed;

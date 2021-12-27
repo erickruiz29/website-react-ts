@@ -1,15 +1,15 @@
 import { IPropsWithChildren } from '../../utils/util';
-import styles from './Content.module.scss';
+import styles from './ContentGrid.module.scss';
 
 export interface ContentProps extends IPropsWithChildren {
   preserveNewlines?: boolean;
 }
 
-export function Content(props: ContentProps) {
+export function ContentGrid(props: ContentProps) {
   return (
     <div
       className={[
-        styles.content,
+        styles.contentGrid,
         props.classes,
         props.preserveNewlines === true ? styles.newlines : '',
       ].join(' ')}

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-import {Route, Switch} from 'react-router-dom';
-import {About} from "./pages/About";
-import {HomePage} from "./pages/HomePage";
+import { Route, Switch } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { Scrapbook } from './pages/Scrapbook';
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/about-me">
-          <About />
+        <Route path="/scrapbook" exact>
+          <Scrapbook />
         </Route>
       </Switch>
     </div>
