@@ -1,0 +1,26 @@
+.frame {
+  background-color: var(--color-brand-primary);
+  height: rem(256);
+  padding: rem(8);
+  width: rem(190);
+
+  .photoContainer {
+    background-color: var(--color-brand-secondary);
+    height: rem(174);
+    width: rem(174);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+    }
+  }
+  
+  .footer {
+    @include textBody1();
+  
+    margin-top: rem(8);
+  }
+}
+

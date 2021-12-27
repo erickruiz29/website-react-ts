@@ -4,13 +4,9 @@
   margin: rem(16) auto;
   display: grid;
   grid-template-columns: repeat(8, rem(190));
-  grid-template-rows: repeat(3, rem(260));
+  grid-template-rows: repeat(3, rem(256));
   row-gap: rem(12);
   column-gap: rem(12);
-
-  div {
-    background-color: var(--surface-bg-2);
-  }
 }
 
 @include md($screen-md-min) {
