@@ -12,17 +12,6 @@ export function Scrapbook() {
     undefined
   );
   let hasTriggered = false
-  window.addEventListener('resize', () => {
-    if (!hasTriggered) {
-      hasTriggered = true;
-      if (modalProps !== undefined) {
-        setModalProps({ ...modalProps, docHeight: window.outerHeight });
-      }
-      window.setTimeout(() => {
-        hasTriggered = false;
-      }, 500);
-    }
-  });
 
   let blocks: ReactElement[] = [];
   for (let i = 1; i <= 24; i += 1) {
@@ -32,12 +21,11 @@ export function Scrapbook() {
         multiplier={i * 100}
         imgSrc={imageSrc}
         description={`grid item ${i}`}
-        randRotation={false}
+        randRotation={true}
         onClick={() => {
           setModalProps({
             imgSrc: imageSrc,
             description: `grid item ${i}`,
-            docHeight: modalProps?.docHeight ?? window.outerHeight,
             overlayClick: () => {
               setModalProps(undefined);
             },

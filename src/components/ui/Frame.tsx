@@ -13,7 +13,7 @@ export interface IFrameProps extends IPropsWithChildren {
 export function Frame(props: IFrameProps) {
   const negPos = Math.random() < 0.5 ? -1 : 1;
   const randNum =
-    (Math.random() * (props.multiplier ? props.multiplier : 113) * negPos) % 6;
+    (Math.floor(Math.random() * 100) * negPos) % 6;
   return (
     <div
       className={styles.frame}
