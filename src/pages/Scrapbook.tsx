@@ -6,37 +6,55 @@ import { Frame } from '../components/ui/Frame';
 import styles from './Scrapbook.module.scss';
 import imageSrc from './../assets/images/01.jpg';
 import { FrameModal, IFrameModalProps } from '../components/ui/FrameModal';
+import { BlockFrame } from '../components/ui/BlockFrame';
 
 export function Scrapbook() {
   const [modalProps, setModalProps] = useState<IFrameModalProps | undefined>(
     undefined
   );
-  let hasTriggered = false
+
+  const showImgModal = (src: string, desc: string, isBlockFrame = false) => {
+    setModalProps({
+      imgSrc: src,
+      description: desc,
+      isBlockFrame: isBlockFrame,
+      overlayClick: () => {
+        setModalProps(undefined);
+      },
+    });
+  };
 
   let blocks: ReactElement[] = [];
-  for (let i = 1; i <= 24; i += 1) {
+  for (let i = 1; i <= 56; i += 1) {
+    const desc = `grid item ${i}`;
     blocks.push(
       <Frame
         key={i}
         multiplier={i * 100}
         imgSrc={imageSrc}
-        description={`grid item ${i}`}
-        randRotation={true}
+        description={desc}
+        randRotation={false}
         onClick={() => {
-          setModalProps({
-            imgSrc: imageSrc,
-            description: `grid item ${i}`,
-            overlayClick: () => {
-              setModalProps(undefined);
-            },
-          });
+          showImgModal(imageSrc, desc);
         }}
       />
     );
   }
   return (
     <Layout navMenu={<Fragment />} contentGridSizing={true}>
-      <ContentGrid classes={[styles.scrapbook]}>{blocks}</ContentGrid>
+      <ContentGrid classes={[styles.scrapbook]}>
+        {blocks}
+        <BlockFrame
+          imgSrc={imageSrc}
+          startCol={3}
+          colLen={4}
+          startRow={2}
+          rowLen={2}
+          onClick={() => {
+            showImgModal(imageSrc, 'BLOCKFRAME', true)
+          }}
+        />
+      </ContentGrid>
       {modalProps && <FrameModal {...modalProps} />}
     </Layout>
   );

@@ -3,8 +3,9 @@
   height: rem(256);
   padding: rem(8);
   width: rem(190);
+  box-shadow: rem(3) rem(3) rem(5) #777;
 
-  .photoContainer {
+  &__photoContainer {
     background-color: var(--color-brand-secondary);
     height: rem(174);
     width: rem(174);
@@ -16,11 +17,30 @@
       width: 100%;
     }
   }
-  
-  .footer {
-    @include textBody1();
-  
-    margin-top: rem(8);
+}
+
+.blockFrame {
+  background-color: var(--color-brand-primary);
+  padding: rem(8);
+  box-shadow: rem(3) rem(3) rem(5) #777;
+
+  &__photoContainer {
+    background-color: var(--color-brand-secondary);
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+    }
   }
+}
+
+.footer {
+  @include textBody1();
+
+  margin-top: rem(8);
 }
 
