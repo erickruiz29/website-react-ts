@@ -1,12 +1,11 @@
 import { MouseEventHandler } from 'react';
-import { IPropsWithChildren, randInt } from '../../utils';
+import { IPropsWithChildren } from '../../utils';
 import styles from './Frame.module.scss';
 import modalStyles from './FrameModal.module.scss';
 
 export interface IFrameProps extends IPropsWithChildren {
   description?: string;
   imgSrc: string;
-  randRotation?: boolean;
   onClick?: MouseEventHandler<HTMLDivElement>;
   isBlockFrame?: boolean;
   isModal?: boolean;
@@ -16,15 +15,12 @@ export interface IFrameProps extends IPropsWithChildren {
 }
 
 export function Frame(props: IFrameProps) {
-  const negPos = Math.random() < 0.5 ? -1 : 1;
-  const randNum = randInt(0, 6) * negPos;
   const useStyles = props.isModal === true ? modalStyles : styles;
   return (
     <div
       className={props.isBlockFrame ? useStyles.blockFrame : useStyles.frame}
       style={{
         ...props.styles,
-        transform: props.randRotation ? `rotate(${randNum}deg)` : '',
       }}
       onClick={props.onClick}
     >

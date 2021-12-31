@@ -23,6 +23,14 @@ $text-disabled-white: scale-color($surface-white, $alpha: -45%);
 html {
   --color-brand-primary: #{$color-brand-primary};
   --color-brand-secondary: #{$color-brand-secondary};
+  --text-high-emphasis-black: #{$text-high-emphasis-black};
+  --text-med-emphasis-black: #{$text-med-emphasis-black};
+  --text-disabled-black: #{$text-disabled-black};
+  --text-high-emphasis-white: #{$text-high-emphasis-white};
+  --text-med-emphasis-white: #{$text-med-emphasis-white};
+  --text-disabled-white: #{$text-disabled-white};
+
+  // Theme-dependent variables
   --surface-bg-1: #{$surface-bg-1-light};
   --surface-bg-2: #{$surface-bg-2-light};
   --surface-bg-3: #{$surface-bg-3-light};
@@ -32,8 +40,6 @@ html {
 }
 
 @mixin darkTheme {
-  --color-brand-primary: #{$color-brand-primary};
-  --color-brand-secondary: #{$color-brand-secondary};
   --surface-bg-1: #{$surface-bg-1-dark};
   --surface-bg-2: #{$surface-bg-2-dark};
   --surface-bg-3: #{$surface-bg-3-dark};

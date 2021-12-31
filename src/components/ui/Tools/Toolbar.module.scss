@@ -1,0 +1,41 @@
+.toolbar {
+    background-color: var(--color-brand-secondary);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: rem(32);
+    z-index: 100;
+
+    &__createFrameTool {
+        @include Heading3();
+
+        background-color: greenyellow;
+        color: var(--text-high-emphasis-black);
+        cursor: pointer;
+        padding: rem(8);
+    }
+}
+
+.frameTool {
+    background-color: var(--color-brand-secondary);
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: rem(300);
+    z-index: 100;
+}
+
+.toolOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 90;
+}
