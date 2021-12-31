@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useAppDispatch } from '../../../app/hooks';
 import { createFrame } from '../../../redux/FramesSlice';
 import { openCloseFrameTool } from '../../../redux/ToolbarSlice';
@@ -9,12 +10,12 @@ import styles from './Toolbar.module.scss';
 interface IFrameToolProps extends IProps {}
 
 export const FrameTool = (props: IFrameToolProps) => {
-  const frame: IFrameProps = {
+  const [frame, setFrame] = useState<IFrameProps>({
     imgSrc: '',
     title: '',
     date: '',
     description: '',
-  };
+  } as IFrameProps);
 
   const dispatch = useAppDispatch();
 
@@ -33,8 +34,9 @@ export const FrameTool = (props: IFrameToolProps) => {
             type={'text'}
             placeholder="https://imgur.com/...."
             onChange={(e) => {
-              frame.imgSrc = e.currentTarget.value;
+              setFrame({...frame, imgSrc: e.currentTarget.value})
             }}
+            value={frame.imgSrc}
           />
         </div>
         <div>
@@ -43,8 +45,9 @@ export const FrameTool = (props: IFrameToolProps) => {
             type={'text'}
             placeholder="The day we went to..."
             onChange={(e) => {
-              frame.title = e.currentTarget.value;
+              setFrame({...frame, title: e.currentTarget.value})
             }}
+            value={frame.title}
           />
         </div>
         <div>
@@ -53,8 +56,9 @@ export const FrameTool = (props: IFrameToolProps) => {
             type={'text'}
             placeholder="12/25/2021"
             onChange={(e) => {
-              frame.date = e.currentTarget.value;
+              setFrame({...frame, date: e.currentTarget.value})
             }}
+            value={frame.date}
           />
         </div>
         <div>
@@ -63,13 +67,20 @@ export const FrameTool = (props: IFrameToolProps) => {
             type={'text'}
             placeholder="This one time at band camp"
             onChange={(e) => {
-              frame.description = e.currentTarget.value;
+              setFrame({...frame, description: e.currentTarget.value})
             }}
+            value={frame.description}
           />
         </div>
         <div
           onClick={() => {
             dispatch(createFrame(frame));
+            setFrame({
+              imgSrc: '',
+              title: '',
+              date: '',
+              description: '',
+            } as IFrameProps)
           }}
         >
           Create Frame!!
