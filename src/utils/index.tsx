@@ -1,8 +1,15 @@
-export interface IProps {
-    classes?: string[]
+import React from "react"
+
+export interface IDivProps extends React.DetailedHTMLProps<
+React.HTMLAttributes<HTMLDivElement>,
+HTMLDivElement
+> {}
+
+export interface IInputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {}
+export interface ILabelProps extends React.DetailedHTMLProps<React.LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
+    innertext?: string
 }
 
-export interface IPropsWithChildren extends  React.PropsWithChildren<IProps> {}
 
 export const optionalAttr = (attr: string[] | undefined): string[] => {
     if  (attr !== undefined) {

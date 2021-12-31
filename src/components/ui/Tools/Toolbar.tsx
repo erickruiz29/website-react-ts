@@ -1,10 +1,10 @@
 import { useAppDispatch } from '../../../app/hooks';
 import { openCloseFrameTool } from '../../../redux/ToolbarSlice';
-import { IProps } from '../../../utils';
+import { IDivProps } from '../../../utils';
 
 import styles from './Toolbar.module.scss';
 
-interface IToolbarProps extends IProps {}
+interface IToolbarProps extends IDivProps {}
 
 export const Toolbar = (props: IToolbarProps) => {
     const dispatch = useAppDispatch()

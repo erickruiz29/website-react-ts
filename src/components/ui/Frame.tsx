@@ -1,17 +1,16 @@
 import { MouseEventHandler } from 'react';
-import { IPropsWithChildren } from '../../utils';
 import styles from './Frame.module.scss';
 import modalStyles from './FrameModal.module.scss';
 
-export interface IFrameProps extends IPropsWithChildren {
+export interface IFrameProps {
   description?: string;
   imgSrc: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
   isBlockFrame?: boolean;
   isModal?: boolean;
-  date?: string
-  title?: string
-  styles?: React.CSSProperties
+  date?: string;
+  title?: string;
+  style?: React.CSSProperties
 }
 
 export function Frame(props: IFrameProps) {
@@ -20,7 +19,7 @@ export function Frame(props: IFrameProps) {
     <div
       className={props.isBlockFrame ? useStyles.blockFrame : useStyles.frame}
       style={{
-        ...props.styles,
+        ...props.style,
       }}
       onClick={props.onClick}
     >

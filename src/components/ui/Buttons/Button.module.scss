@@ -1,0 +1,20 @@
+.button {
+  @include Heading3();
+  @extend %no-highlight;
+
+  background-color: var(--surface-bg-1);
+  border-radius: rem(4);
+  border: rem(2) solid transparent;
+  color: var(--text-high-emphasis);
+  cursor: pointer;
+  padding: rem(16) rem(16);
+  margin: 0 auto;
+  width: fit-content;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    border: rem(2) solid var(--surface-bg-2);
+  }
+}

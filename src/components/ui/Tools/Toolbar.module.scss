@@ -23,6 +23,9 @@
 .frameTool {
     background-color: var(--color-brand-secondary);
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     right: 0;
     top: 0;

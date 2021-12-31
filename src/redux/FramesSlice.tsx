@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { IFrameProps } from '../components/ui/Frame';
+import { IBlockFrameProps } from '../components/ui/BlockFrame';
 
 export interface FramesState {
-  frames: IFrameProps[]
+  frames: IBlockFrameProps[]
 }
 
 const initialState: FramesState = {
-  frames: []
+  frames: [] as IBlockFrameProps[]
 };
 
 
@@ -15,7 +15,7 @@ export const framesSlice = createSlice({
     name: 'frames',
     initialState,
     reducers: {
-      createFrame: (state: FramesState, action: PayloadAction<IFrameProps>) => {
+      createFrame: (state: FramesState, action: PayloadAction<IBlockFrameProps>) => {
         state.frames.push(action.payload);
       },
     },

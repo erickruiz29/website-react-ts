@@ -49,7 +49,7 @@ export function Scrapbook() {
         description={desc}
         title={desc}
         date={dateStr}
-        styles={
+        style={
           {
             background: `linear-gradient(${rgbaTop}, ${rgbaBottom})`,
             transform: rotation,
@@ -72,30 +72,30 @@ export function Scrapbook() {
   }
   return (
     <Layout navMenu={<Toolbar />} contentGridSizing={true}>
-      <ContentGrid classes={[styles.scrapbook]}>
-        <BlockFrame
-          imgSrc={imageSrc}
-          styles={
-            { gridRow: `2 / 4`, gridColumn: `3 / 7` } as React.CSSProperties
-          }
-          onClick={() => {
-            showImgModal({
-              imgSrc: imageSrc,
-              isBlockFrame: true,
-            } as IFrameModalProps);
-          }}
-        />
-        {frames.map((frameProps) => (
-          <Frame
-            key={getUUID()}
-            {...{
-              ...frameProps,
-              onClick: () => {
-                showImgModal(frameProps);
-              },
-            }}
-          />
-        ))}
+      <ContentGrid className={styles.scrapbook}>
+        {frames.map((frameProps) =>
+          frameProps.isBlockFrame ? (
+            <BlockFrame
+              key={getUUID()}
+              {...{
+                ...frameProps,
+                onClick: () => {
+                  showImgModal(frameProps);
+                },
+              }}
+            />
+          ) : (
+            <Frame
+              key={getUUID()}
+              {...{
+                ...frameProps,
+                onClick: () => {
+                  showImgModal(frameProps);
+                },
+              }}
+            />
+          )
+        )}
       </ContentGrid>
       {modalProps && <FrameModal {...modalProps} />}
       {isFrameToolOpen && <FrameTool />}
