@@ -9,7 +9,7 @@
     z-index: 900;
   }
 
-  .frameModal {
+  .frame {
     background-color: var(--color-brand-primary);
     padding: rem(16);
     position: fixed;
@@ -34,7 +34,7 @@
     }
   }
 
-  .blockFrameModal {
+  .blockFrame {
     background-color: var(--color-brand-primary);
     padding: rem(16);
     position: fixed;
@@ -60,8 +60,31 @@
   }
 
   .footer {
-    @include textBody1();
-
-    margin-top: rem(16);
+    @include Heading1();
+  
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(8);
+  
+    &__top {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    &__title {
+      @include Heading1();
+    }
+  
+    &__date {
+      @include Heading1();
+  
+      margin-left: auto;
+    }
+  
+    &__description {
+      @include Heading1();
+  
+      margin-top: rem(16);
+    }
   }
 }

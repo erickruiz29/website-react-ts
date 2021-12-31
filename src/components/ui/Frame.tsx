@@ -1,52 +1,51 @@
 import { MouseEventHandler } from 'react';
-import { IPropsWithChildren } from '../../utils/util';
+import { IPropsWithChildren, randInt } from '../../utils';
 import styles from './Frame.module.scss';
+import modalStyles from './FrameModal.module.scss';
 
 export interface IFrameProps extends IPropsWithChildren {
   description?: string;
   imgSrc: string;
   randRotation?: boolean;
-  multiplier?: number;
   onClick?: MouseEventHandler<HTMLDivElement>;
   isBlockFrame?: boolean;
-  startRow?: number;
-  startCol?: number;
-  colLen?: number;
-  rowLen?: number;
+  isModal?: boolean;
+  date?: string
+  title?: string
+  styles?: React.CSSProperties
 }
 
 export function Frame(props: IFrameProps) {
   const negPos = Math.random() < 0.5 ? -1 : 1;
-  const randNum = (Math.floor(Math.random() * 100) * negPos) % 6;
-  const gridRow =
-    props.rowLen && props.startRow
-      ? `${props.startRow} / ${props.startRow + props.rowLen}`
-      : '';
-
-  const gridCol =
-    props.colLen && props.startCol
-      ? `${props.startCol} / ${props.startCol + props.colLen}`
-      : '';
+  const randNum = randInt(0, 6) * negPos;
+  const useStyles = props.isModal === true ? modalStyles : styles;
   return (
     <div
-      className={props.isBlockFrame ? styles.blockFrame : styles.frame}
+      className={props.isBlockFrame ? useStyles.blockFrame : useStyles.frame}
       style={{
+        ...props.styles,
         transform: props.randRotation ? `rotate(${randNum}deg)` : '',
-        gridRow: gridRow,
-        gridColumn: gridCol,
       }}
       onClick={props.onClick}
     >
       <div
         className={
           props.isBlockFrame
-            ? styles.blockFrame__photoContainer
-            : styles.frame__photoContainer
+            ? useStyles.blockFrame__photoContainer
+            : useStyles.frame__photoContainer
         }
       >
         <img src={props.imgSrc} alt={props.description ?? 'image'} />
       </div>
-      <div className={styles.footer}>{props.description ?? ''}</div>
+      <div className={useStyles.footer}>
+        <div className={useStyles.footer__top}>
+          <div className={useStyles.footer__title}>{props.title ?? ''}</div>
+          <div className={useStyles.footer__date}>{props.date ?? ''}</div>
+        </div>
+        <div className={useStyles.footer__description}>
+          {props.description ?? ''}
+        </div>
+      </div>
     </div>
   );
 }

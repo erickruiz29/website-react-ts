@@ -41,6 +41,29 @@
 .footer {
   @include textBody1();
 
+  display: flex;
+  flex-direction: column;
   margin-top: rem(8);
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__title {
+    @include textBody1();
+  }
+
+  &__date {
+    @include textBody1();
+
+    margin-left: auto;
+  }
+
+  &__description {
+    @include textBody1();
+
+    margin-top: rem(4);
+  }
 }
 

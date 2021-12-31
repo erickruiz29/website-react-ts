@@ -1,4 +1,4 @@
-import { IPropsWithChildren } from '../../utils/util';
+import { IPropsWithChildren } from '../../utils';
 import styles from './Content.module.scss';
 
 export interface ContentProps extends IPropsWithChildren {

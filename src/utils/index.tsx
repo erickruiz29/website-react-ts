@@ -11,3 +11,7 @@ export const optionalAttr = (attr: string[] | undefined): string[] => {
         return []
     }
 }
+
+export const randInt = (min: number, max: number): number => {
+    return Math.floor(Math.random() * (max-min)) + min
+  }

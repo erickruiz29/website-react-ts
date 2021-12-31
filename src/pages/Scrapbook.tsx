@@ -1,23 +1,22 @@
 import React, { Fragment, ReactElement, useState } from 'react';
 import { ContentGrid } from '../components/layout/ContentGrid';
 import { Layout } from '../components/layout/Layout';
-import { Frame } from '../components/ui/Frame';
+import { Frame, IFrameProps } from '../components/ui/Frame';
 
 import styles from './Scrapbook.module.scss';
 import imageSrc from './../assets/images/01.jpg';
 import { FrameModal, IFrameModalProps } from '../components/ui/FrameModal';
 import { BlockFrame } from '../components/ui/BlockFrame';
+import { randInt } from '../utils';
 
 export function Scrapbook() {
   const [modalProps, setModalProps] = useState<IFrameModalProps | undefined>(
     undefined
   );
 
-  const showImgModal = (src: string, desc: string, isBlockFrame = false) => {
+  const showImgModal = (props: IFrameModalProps) => {
     setModalProps({
-      imgSrc: src,
-      description: desc,
-      isBlockFrame: isBlockFrame,
+      ...props,
       overlayClick: () => {
         setModalProps(undefined);
       },
@@ -27,15 +26,27 @@ export function Scrapbook() {
   let blocks: ReactElement[] = [];
   for (let i = 1; i <= 56; i += 1) {
     const desc = `grid item ${i}`;
+    const dateStr = new Date().toLocaleDateString();
+    const rgbaTop = `rgba(${i * (randInt(0, 255) / 56)}, ${i * (randInt(0, 255) / 56)}, ${i * (randInt(0, 255) / 56)}, 1)`
+    const rgbaBottom = `rgba(${(56 - i) * (randInt(0, 255) / 56)}, ${(56 - i) * (randInt(0, 255) / 56)}, ${(56 - i) * (randInt(0, 255) / 56)}, 1)`
     blocks.push(
       <Frame
         key={i}
-        multiplier={i * 100}
         imgSrc={imageSrc}
         description={desc}
-        randRotation={false}
+        randRotation={true}
+        title={desc}
+        date={dateStr}
+        styles={{background: `linear-gradient(${rgbaTop}, ${rgbaBottom})`} as React.CSSProperties}
         onClick={() => {
-          showImgModal(imageSrc, desc);
+          showImgModal({
+            imgSrc: imageSrc,
+            description: desc,
+            title: desc,
+            date: dateStr,
+            isModal: true,
+            styles: {background: `linear-gradient(${rgbaTop}, ${rgbaBottom})`} as React.CSSProperties
+          } as IFrameModalProps);
         }}
       />
     );
@@ -46,12 +57,12 @@ export function Scrapbook() {
         {blocks}
         <BlockFrame
           imgSrc={imageSrc}
-          startCol={3}
-          colLen={4}
-          startRow={2}
-          rowLen={2}
+          styles={{gridRow: `2 / 4`, gridColumn: `3 / 7`} as React.CSSProperties}
           onClick={() => {
-            showImgModal(imageSrc, 'BLOCKFRAME', true)
+            showImgModal({
+              imgSrc: imageSrc,
+              isBlockFrame: true
+            } as IFrameModalProps);
           }}
         />
       </ContentGrid>
