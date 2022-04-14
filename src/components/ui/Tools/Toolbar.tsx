@@ -10,6 +10,7 @@ export const Toolbar = (props: IToolbarProps) => {
     const dispatch = useAppDispatch()
   return (
     <div className={styles.toolbar}>
+      <div className={styles.toolbar__homeLink}><a href={"/"}>Home</a></div>
       <div
         className={styles.toolbar__createFrameTool}
         onClick={() => {

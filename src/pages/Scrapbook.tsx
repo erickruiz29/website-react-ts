@@ -96,6 +96,7 @@ export function Scrapbook() {
             />
           )
         )}
+        {blocks}
       </ContentGrid>
       {modalProps && <FrameModal {...modalProps} />}
       {isFrameToolOpen && <FrameTool />}

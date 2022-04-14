@@ -18,6 +18,19 @@
         cursor: pointer;
         padding: rem(8);
     }
+
+    &__homeLink {
+        @include Heading3();
+
+        background-color: greenyellow;
+        color: var(--text-high-emphasis-black);
+        padding: rem(8);
+        margin-left: rem(8);
+        margin-right: auto;
+        a {
+            text-decoration: none;
+        }
+    }
 }
 
 .frameTool {

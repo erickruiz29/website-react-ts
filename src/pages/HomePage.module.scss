@@ -10,6 +10,44 @@
     height: rem(900);
     width: 100%;
     background-attachment: fixed;
+    flex-direction: column;
+    padding: rem(32);
+  }
+
+  .title {
+    font-size: rem(128);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      font-size: rem(96);
+    }
+  }
+
+  .emphasisBig {
+    font-size: rem(64);
+    //margin-right: rem(4);
+
+    @media (max-width: 768px) {
+      font-size: rem(48);
+    }
+  }
+
+  .columnContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleLink {
+    font-size: rem(32);
+    color: var(--text-high-emphasis-white);
+    text-decoration: none;
+    margin: rem(8) 0;
+
+    &:hover {
+      color: var(--text-med-emphasis-white);
+    }
   }
   
   .content01 {
