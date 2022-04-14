@@ -2,6 +2,9 @@ import React from 'react';
 import { Content } from '../components/layout/Content';
 import { Layout } from '../components/layout/Layout';
 import { ScrollableNavMenu } from '../components/layout/NavigationMenu';
+import { IExtendedInputProps } from '../components/ui/Inputs/Input';
+import { InputFormGroup } from '../components/ui/Inputs/InputFormGroup';
+import { ILabelProps } from '../utils';
 
 import styles from './HomePage.module.scss';
 
@@ -46,9 +49,6 @@ export function HomePage() {
             <div className={styles.emphasisBig}>{`W`}</div>
             <span>{`elcome to my personal website. A space to showcase myself, my interests and work. Feel free to look around.`}</span>
           </Content>
-          <Content
-            preserveNewlines={true}
-          >{`I am a frontend software engineer`}</Content>
         </div>
         <div
           id="content02"
@@ -59,11 +59,26 @@ export function HomePage() {
           className={[styles.parallax, styles.content03].join(' ')}
         >
           <Content preserveNewlines={true}>
+            {<div className={styles.title}>Projects</div>}
+          </Content>
+          <Content preserveNewlines={true}>
             <div className={styles.columnContainer}>
               <a className={styles.titleLink} href={'/scrapbook'}>
                 Scrapbook project
               </a>
-              <div className="">{`Project inspired by my brother Bryan Ruiz's project. (link coming soon). This project tries to tackle generating new images and block areas dynamically by a user rather than programmatically.`}</div>
+              <div className="">
+                {`Project inspired by my brother Bryan Ruiz's project. This project tries to tackle generating new images and block areas dynamically by a user rather than programmatically.`}
+                <div>
+                  <a
+                    className={styles.inlineLink}
+                    href={'https://bryan-scrapbook.herokuapp.com/'}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Bryan's Project
+                  </a>
+                </div>
+              </div>
             </div>
           </Content>
           <Content preserveNewlines={true}>
@@ -71,8 +86,8 @@ export function HomePage() {
               <a
                 className={styles.titleLink}
                 href={'https://victory-lock-control.herokuapp.com'}
-                rel={"noreferrer"}
-                target={"_blank"}
+                rel={'noreferrer'}
+                target={'_blank'}
               >
                 Victory Lock Control - business website
               </a>
@@ -87,7 +102,19 @@ export function HomePage() {
         <div
           id="content05"
           className={[styles.parallax, styles.content05].join(' ')}
-        />
+        >
+          <Content preserveNewlines={true}>
+            {<div className={styles.title}>Contact</div>}
+          </Content>
+          <Content>
+            <a
+              className={styles.inlineLink}
+              href={'mailto:erickruiz29@gmail.com'}
+            >
+              {`Email me: Erick Ruiz 29 at gmail`}
+            </a>
+          </Content>
+        </div>
         {/*<div
           id="content06"
           className={[styles.parallax, styles.content06].join(' ')}

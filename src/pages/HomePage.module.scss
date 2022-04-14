@@ -39,6 +39,15 @@
     flex-direction: column;
   }
 
+  .inlineLink {
+    color: var(--text-high-emphasis-white);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--text-med-emphasis-white);
+    }
+  }
+
   .titleLink {
     font-size: rem(32);
     color: var(--text-high-emphasis-white);
